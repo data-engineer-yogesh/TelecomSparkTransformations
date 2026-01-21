@@ -1,0 +1,26 @@
+[
+    {
+        "usage_id": "D2001",
+        "subscriber_id": "S001",
+        "usage_date": "2024-01-01",
+        "data_mb": 512.5
+    },
+    {
+        "usage_id": "D2002",
+        "subscriber_id": "S001",
+        "usage_date": "2024-01-02",
+        "data_mb": 1024.0
+    },
+    {
+        "usage_id": "D2003",
+        "subscriber_id": "S002",
+        "usage_date": "2024-01-01",
+        "data_mb": 256.0
+    },
+    {
+        "usage_id": "D2004",
+        "subscriber_id": "S003",
+        "usage_date": "2024-01-03",
+        "data_mb": 0
+    }
+]

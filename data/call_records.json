@@ -1,0 +1,34 @@
+[
+    {
+        "call_id": "C1001",
+        "subscriber_id": "S001",
+        "call_date": "2024-01-01",
+        "call_type": "OUTGOING",
+        "call_duration_sec": 180,
+        "destination_circle": "MH"
+    },
+    {
+        "call_id": "C1002",
+        "subscriber_id": "S001",
+        "call_date": "2024-01-02",
+        "call_type": "INCOMING",
+        "call_duration_sec": 240,
+        "destination_circle": "KA"
+    },
+    {
+        "call_id": "C1003",
+        "subscriber_id": "S002",
+        "call_date": "2024-01-01",
+        "call_type": "OUTGOING",
+        "call_duration_sec": 300,
+        "destination_circle": "DL"
+    },
+    {
+        "call_id": "C1004",
+        "subscriber_id": "S003",
+        "call_date": "2024-01-03",
+        "call_type": "OUTGOING",
+        "call_duration_sec": 0,
+        "destination_circle": "MH"
+    }
+]

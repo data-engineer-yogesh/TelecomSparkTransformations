@@ -1,0 +1,26 @@
+[
+    {
+        "subscriber_id": "S001",
+        "name": "Rahul Sharma",
+        "phone_number": "9876543210",
+        "plan_type": "PREPAID",
+        "activation_date": "2023-01-10",
+        "circle": "MH"
+    },
+    {
+        "subscriber_id": "S002",
+        "name": "Anita Verma",
+        "phone_number": "9876543222",
+        "plan_type": "POSTPAID",
+        "activation_date": "2022-11-05",
+        "circle": "KA"
+    },
+    {
+        "subscriber_id": "S003",
+        "name": "Amit Patil",
+        "phone_number": "9876543333",
+        "plan_type": "PREPAID",
+        "activation_date": "2023-03-18",
+        "circle": "DL"
+    }
+]

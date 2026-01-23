@@ -1,22 +1,23 @@
 # TelecomSparkTransformations
 
 **Project Overview**
----
-TelecomSparkTransformations is a hands-on Apache Spark project designed to practice DataFrame API, Spark SQL, joins, aggregations, window functions, and Delta Lake pipelines using a Telecom Analytics domain.
-This project follows a Bronze → Silver → Gold architecture and is aligned with Databricks Certified Data Engineer exam patterns.
+TelecomSparkTransformations is a hands-on Apache Spark project designed to practice Spark DataFrame API and Spark SQL using a Telecom Analytics domain.  
+The project focuses on joins, aggregations, window functions, and Delta Lake pipelines, and follows the Bronze–Silver–Gold Lakehouse architecture.
 
-### 🎯 Learning Objectives
+This project is aligned with Databricks Certified Data Engineer exam patterns and real-world data engineering use cases.
 
+
+
+## Learning Objectives
 By completing this project, you will:
-- Understand Spark DataFrame & SQL transformations
-- Apply joins, filters, aggregations
-- Implement window functions (ranking & rolling metrics)
-- Build Delta Lake pipelines
-- Learn DF vs SQL decision rules for exams and real projects
+- Understand Spark DataFrame and Spark SQL transformations
+- Apply joins, filters, and aggregations
+- Implement window functions for ranking and rolling metrics
+- Build Delta Lake pipelines using Bronze, Silver, and Gold layers
+- Learn DataFrame versus Spark SQL decision rules for exams and production projects
 
 
-### Architecture Pattern
---- 
+## Architecture Pattern
 
 ```
 This project uses the Lakehouse architecture:
@@ -30,12 +31,11 @@ Gold Layer (Analytics & Business Metrics)
 
 ```
 
-⚠️ Note: Bronze, Silver, and Gold are logical schemas and Delta tables,
-not physical folders.
+
+**Note:** *Bronze, Silver, and Gold are logical schemas implemented as Delta tables, not physical folders.*
 
 
-### 🏗️ Project Structure
----
+## Project Structure
 
 ```
 
@@ -62,118 +62,109 @@ TelecomSparkTransformations/
 └── README.md
 
 ```
----- 
-#### Bronze Layer – Raw Ingestion
 
-Notebook: 01_bronze_ingestion.ipynb
+---
 
-**Purpose**
+## Bronze Layer – Raw Ingestion
 
-- Ingest raw JSON data
+**Notebook**
+
+*01_bronze_ingestion.ipynb*
+
+### Purpose
+- Ingest raw JSON telecom data
 - Store data as Bronze Delta tables
-- Minimal or no transformation
-- Bronze Tables Created
+- Apply minimal or no transformations
 
-```
-bronze.subscribers
-bronze.call_records
-bronze.data_usage
-bronze.recharge
+### Bronze Tables
+- bronze.subscribers
+- bronze.call_records
+- bronze.data_usage
+- bronze.recharge
 
-```
-
-**Key Characteristics**
-
-- Append-only
+### Key Characteristics
+- Append-only ingestion
 - Schema-on-read
 - Source-of-truth data
 
----
-#### Silver Layer – Transformations
 
-Notebook: 02_silver_transformations.ipynb
+## Silver Layer – Transformations
 
-**Purpose**
+**Notebook**
 
-- Clean and enrich telecom data
+*02_silver_transformations.ipynb*
+
+### Purpose
+- Clean and enrich telecom datasets
 - Apply business logic
 - Join multiple Bronze tables
-- Silver Tables Created
 
-```
-silver.usage_enriched
+### Silver Tables
+- silver.usage_enriched
 
-```
-**Transformations Applied**
-
-- Joins between subscribers, calls, and data usage
+### Transformations Applied
+- Joins between subscribers, call records, and data usage
 - Filtering invalid or zero-usage records
-- Derived usage metrics
----
+- Derived usage and activity metrics
 
-#### Gold Layer – Analytics
+## Gold Layer – Analytics
 
-Notebook: 03_gold_analytics.ipynb
+**Notebook**
 
-**Purpose**
-- Create analytics-ready tables
-- Support reporting and insights
-- Gold Tables Created
-  
-```
-gold.subscriber_metrics
-gold.daily_network_usage
+*03_gold_analytics.ipynb*
 
-```
+### Purpose
+- Create analytics-ready datasets
+- Support reporting and business insights
 
-**Metrics Covered**
+### Gold Tables
+- gold.subscriber_metrics
+- gold.daily_network_usage
 
+### Metrics Covered
 - Total usage per subscriber
 - Average daily usage
 - Active usage days
 - Subscriber ranking by usage
----
 
-#### 🪟 Window Functions
 
-This project covers exam-critical window functions, including:
-
-- RANK() – Subscriber ranking based on usage
-- Rolling 7-day usage using partitioned windows
+## Window Functions
+This project covers window functions commonly tested in certification exams and used in analytics workloads:
+- RANK for subscriber ranking based on usage
+- Rolling seven-day usage metrics using partitioned windows
 - Time-based aggregations
----
-**DataFrame vs Spark SQL – Decision Rules**
-```
-| Scenario                         | Preferred Approach |
-| -------------------------------- | ------------------ |
-| Complex transformation logic     | DataFrame API      |
-| Reusable pipeline logic          | DataFrame API      |
-| Aggregations & reporting         | Spark SQL          |
-| Window functions (exam-friendly) | Spark SQL          |
-| Ad-hoc analysis                  | Spark SQL          |
 
-```
 ---
 
-#### Technologies Used
+## DataFrame vs Spark SQL – Decision Rules
+
+| Scenario                          | Preferred Approach |
+|----------------------------------|-------------------|
+| Complex transformation logic     | DataFrame API     |
+| Reusable pipeline logic          | DataFrame API     |
+| Aggregations and reporting       | Spark SQL         |
+| Window functions (exam-friendly) | Spark SQL         |
+| Ad-hoc analysis                  | Spark SQL         |
+
+---
+
+## Technologies Used
 - Apache Spark (PySpark)
 - Spark SQL
 - Delta Lake
 - Databricks Notebooks
 - JSON data sources
 - Unity Catalog (design-level)
------
 
-#### Future Enhancements
+---
+
+## Future Enhancements
 - Incremental loads using MERGE INTO
-- OPTIMIZE & Z-ORDER implementation
+- OPTIMIZE and Z-ORDER implementation
 - Data quality checks
 - Streaming ingestion for CDR data
 
 ---
 
-## ⭐ If You Found This Useful
-
-Give this repo a ⭐ and feel free to fork or extend it!
-
-Happy Learning 🚀
+## License
+This project is intended for learning and demonstration purposes.
